@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Results</title>
+    <!-- Add any additional CSS or script links here -->
+</head>
+<body>
+    <h1>Data Analysis Results</h1>
+    
+    <section id="data-preview">
+        <h2>Data Preview</h2>
+        <!-- Display first few rows of the CSV file here -->
+        {{ df | safe }}
+    </section>
+
+    <section id="summary-stats">
+        <h2>Summary Statistics</h2>
+        <!-- Display summary statistics here -->
+        {{ summary_stats | safe }}
+    </section>
+
+    <section id="missing-values">
+        <h2>Missing Values Handling</h2>
+        <!-- Display handling of missing values here -->
+        {{ missing_values | safe }}
+    </section>
+
+    <section id="plots">
+        <h2>Plots</h2>
+        <!-- Display histogram plot here -->
+        <img src="data:image/png;base64,{{ img_url }}" alt="Histogram">
+    </section>
+
+    <!-- Add any additional sections or content as needed -->
+
+</body>
+</html>

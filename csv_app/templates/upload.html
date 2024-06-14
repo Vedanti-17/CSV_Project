@@ -1,0 +1,47 @@
+ECHO is on.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV</title>
+</head>
+<body>
+    <h1>Upload CSV</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Results</title>
+</head>
+<body>
+    <h1>Data Analysis Results</h1>
+    
+    <section id="data-preview">
+        <h2>Data Preview</h2>
+        {{ df | safe }}
+    </section>
+
+    <section id="summary-stats">
+        <h2>Summary Statistics</h2>
+        {{ summary_stats | safe }}
+    </section>
+
+    <section id="missing-values">
+        <h2>Missing Values Handling</h2>
+        {{ missing_values | safe }}
+    </section>
+
+    <section id="plots">
+        <h2>Plots</h2>
+        <img src="data:image/png;base64,{{ img_url }}" alt="Histogram">
+    </section>
+</body>
+</html>

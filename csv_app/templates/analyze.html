@@ -1,0 +1,23 @@
+ECHO is on.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis Results</title>
+</head>
+<body>
+    <h1>Data Analysis Results</h1>
+    <h2>First Few Rows of Data</h2>
+    <div>{{ head|safe }}</div>
+
+    <h2>Summary Statistics</h2>
+    <div>{{ description|safe }}</div>
+
+    <h2>Missing Values</h2>
+    <div>{{ missing_values|safe }}</div>
+
+    <h2>Histograms</h2>
+    {% for histogram in histograms %}
+        <img src="/media/{{ histogram }}" alt="{{ histogram }}">
+    {% endfor %}
+</body>
+</html>
